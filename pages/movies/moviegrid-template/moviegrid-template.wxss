@@ -1,0 +1,7 @@
+@import "/pages/movies/movie-item/movie-item.wxss";
+.itemContainer{
+    float: left;
+}
+.gridContainer{
+    margin: 40rpx 0 40rpx 6rpx;
+}

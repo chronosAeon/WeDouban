@@ -1,0 +1,6 @@
+<view>
+<swiper catchtap="swipertap" class="swiper" interval="3000" indicator-dots="true" autoplay="true">
+<swiper-item class="swiper-item"><image src="/image/post/bl.png"></image></swiper-item>
+<swiper-item class="swiper-item"><image src="/image/post/cat.png"></image></swiper-item>
+</swiper>
+</view>

@@ -1,0 +1,15 @@
+<import src="post-item/post-item-template.wxml"/>
+<view>
+<swiper catchtap="swiperTap" indicator-dots = "true" class="swiper" autoplay = "true" interval = "5000">
+<swiper-item><image src="/image/post/xiaolong.jpg" data-postId="{{0}}"class="swiper-image"></image></swiper-item>
+<swiper-item><image src="/image/vr.png"data-postId="{{1}}" class="swiper-image"></image></swiper-item>
+<swiper-item><image src="/image/iqiyi.png"data-postId="{{2}}" class="swiper-image"></image></swiper-item>
+</swiper>
+<block wx:for="{{contentkey}}" wx:for-item="item" wx:key="*this" wx:if="true">
+<view catchtap = "onPostTap" data-postId="{{item.postId}}">
+<!--这个地方自定义标签属性必须以data开头，而且在-后面的大写都会变成小写-->
+<template is="postItem" data="{{...item}}" />
+<!--这里的三个小点代表是把item展开,为什么用data这个属性的原因就是因为不能在模板的里面写item.keyname来绑定属性，因为每个循环的对象默认叫item但也可能不是，所以尽量是把这种因素排外，所以这里向template传入每个item的数据，同时使用的时候用用...把item展开，所以就可以不加item.了，这个是解决template模板对于数据绑定的解决方案-->
+</view>
+</block>
+</view>
